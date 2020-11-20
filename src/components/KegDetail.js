@@ -12,7 +12,6 @@ function KegDetail(props){
   }
 
   function handleBuyAPint(keg, isSub, dif) {
-    // if (keg.pintsRemaining > 0)
     dif = parseInt(dif);
     props.onClickingBuyAPint({
       name: keg.name,
@@ -35,6 +34,7 @@ function KegDetail(props){
       <Button variant="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
       <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Keg</Button>
       <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>
+      <Button variant="info" onClick={() =>handleBuyAPint(keg, false, (124 - keg.pintsRemaining))}>Refill Keg</Button>
       <hr/>
     </React.Fragment>
   );

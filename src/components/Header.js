@@ -1,8 +1,15 @@
 import React from "react";
 
 function Header(){
+
+  const headerStyle = {
+    color: "white"
+  }
+
   return (
-    <h1>Tap Room</h1>
+    <div style={headerStyle}>
+      <h1>Tap Room</h1>
+    </div>
   );
 }
 
