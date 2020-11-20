@@ -10,8 +10,8 @@ function KegDetail(props){
   }
 
   let pintsRemaining = keg.pintsRemaining;
-  if (parseInt(pintsRemaining) === 0){
-    pintsRemaining = "This Keg is Tapped, Better Buy Another";
+  if (parseInt(pintsRemaining) < 1){
+    pintsRemaining = "This Keg is tapped, better buy another!";
   }
 
   function handleBuyAPint(keg, isSub, dif) {
@@ -35,7 +35,7 @@ function KegDetail(props){
         <h5>Price: ${keg.price}</h5>
         <h5>Alcohol By Volume: {keg.alcoholContent}%</h5>
         <h5>Pints Remaining: {pintsRemaining}</h5>
-        <Button variant="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
+        <Button type="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
         <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Keg</Button>
         <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>
         <Button variant="info" onClick={() =>handleBuyAPint(keg, false, (124 - keg.pintsRemaining))}>Refill Keg</Button>

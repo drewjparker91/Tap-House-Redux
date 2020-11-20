@@ -3,11 +3,6 @@ import PropTypes from "prop-types"
 
 function Keg(props){
 
-  // let pintsRemaining = props.pintsRemaining;
-  // if (parseInt(pintsRemaining) === 0){
-  //   pintsRemaining = "This Keg is Tapped, Better Buy Another";
-  // }
-
   return (
     <React.Fragment>
       <div onClick = {() => props.whenKegClicked(props.id)}>
