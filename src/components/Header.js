@@ -3,12 +3,13 @@ import React from "react";
 function Header(){
 
   const headerStyle = {
-    color: "white"
+    color: "white",
+    fontFamily: "tahoma"
   }
 
   return (
     <div style={headerStyle}>
-      <h1>Tap Room</h1>
+      <h1>The Tap House</h1>
     </div>
   );
 }
