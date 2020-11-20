@@ -3,12 +3,10 @@ import PropTypes from "prop-types"
 
 function Keg(props){
 
-  let pintsRemaining = props.pintsRemaining;
-  if (pintsRemaining < 10){
-    pintsRemaining = pintsRemaining + "Almost Empty";
-  } else if (pintsRemaining === 0){
-    pintsRemaining = "This Keg is Tapped, Better Buy Another";
-  }
+  // let pintsRemaining = props.pintsRemaining;
+  // if (parseInt(pintsRemaining) === 0){
+  //   pintsRemaining = "This Keg is Tapped, Better Buy Another";
+  // }
 
   return (
     <React.Fragment>

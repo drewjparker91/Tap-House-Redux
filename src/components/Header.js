@@ -24,7 +24,7 @@ function Header () {
        
           <ReactBootStrap.Nav.Link href="#NewItem">Add a Keg</ReactBootStrap.Nav.Link>
    
-          <ReactBootStrap.Nav.Link href="#pricing">Item List</ReactBootStrap.Nav.Link>
+          <ReactBootStrap.Nav.Link href="#pricing">Keg List</ReactBootStrap.Nav.Link>
           
         </ReactBootStrap.Nav>
         <ReactBootStrap.Nav>

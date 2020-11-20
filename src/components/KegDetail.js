@@ -10,9 +10,7 @@ function KegDetail(props){
   }
 
   let pintsRemaining = keg.pintsRemaining;
-  if (pintsRemaining < 10){
-    pintsRemaining = keg.price + "Almost Empty"
-  } else if (pintsRemaining === 0){
+  if (parseInt(pintsRemaining) === 0){
     pintsRemaining = "This Keg is Tapped, Better Buy Another";
   }
 
@@ -32,11 +30,11 @@ function KegDetail(props){
     <React.Fragment>
       <div style={kegDetailStyle}>
         <h1>Keg Details</h1>
-        <h3>{keg.name}</h3>
+        <h3>Name: {keg.name}</h3>
         <h5>Crafted By: {keg.brand}</h5>
-        <h5>${keg.price}</h5>
-        <h5>{keg.alcoholContent}% ABV</h5>
-        <h5>{keg.pintsRemaining} Pints Remaining</h5>
+        <h5>Price: ${keg.price}</h5>
+        <h5>Alcohol By Volume: {keg.alcoholContent}%</h5>
+        <h5>Pints Remaining: {pintsRemaining}</h5>
         <Button variant="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
         <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Keg</Button>
         <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>

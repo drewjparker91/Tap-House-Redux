@@ -14,10 +14,15 @@ function KegList(props){
     backgroundColor: 'rgba(52, 52, 52, .3)',
     color: "white",
   }
-  
+  const topListStyle = {
+    color: "white"
+  }
+
   return (
     <React.Fragment>
-      
+      <div style={topListStyle}>
+        <h1>Current Spirits On Tap</h1>
+      </div>
       <hr/>
       <Row>
         {props.kegList.map((keg) =>
