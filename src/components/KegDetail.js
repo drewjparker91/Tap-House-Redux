@@ -12,6 +12,7 @@ function KegDetail(props){
   }
 
   function handleBuyAPint(keg, isSub, dif) {
+    // if (keg.pintsRemaining > 0)
     dif = parseInt(dif);
     props.onClickingBuyAPint({
       name: keg.name,
@@ -42,7 +43,8 @@ function KegDetail(props){
 KegDetail.propTypes = {
   keg: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingBuyAPint: PropTypes.func
 }
 
 export default KegDetail;
