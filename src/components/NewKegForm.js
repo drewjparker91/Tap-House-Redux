@@ -1,7 +1,8 @@
 import React from "react";
 import { v4 } from "uuid";
-import Button from "react-bootstrap/button";
+// import Button from "react-bootstrap/button";
 import PropTypes from "prop-types";
+import ReusableForm from "./ReusableForm";
 
 
 const keg = {};
@@ -22,7 +23,22 @@ function NewKegForm(props){
   }
   return (
     <React.Fragment>
-      <form onSubmit={handleNewKegFormSubmission}>
+      <ReusableForm
+      formSubmissionHandler={handleNewKegFormSubmission}
+      buttonText = "Add Keg"
+      />
+    </React.Fragment>
+  );
+}
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
+
+export default NewKegForm;
+
+
+{/* <form onSubmit={handleNewKegFormSubmission}>
         <input
         type="text"
         name="name"
@@ -49,13 +65,4 @@ function NewKegForm(props){
         placeholder="Enter Number of Pints In Keg"
         />
         <Button variant="success" type="submit">Add This Keg</Button>
-      </form>
-    </React.Fragment>
-  );
-}
-
-NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
-};
-
-export default NewKegForm;
+      </form> */}
