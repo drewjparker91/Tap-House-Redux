@@ -1,20 +1,24 @@
 import React from "react";
 import { v4 } from "uuid";
 import Button from "react-bootstrap/button";
+import PropTypes from "prop-types";
 
 
-const ticket = {};
-ticket.id = v4()
+const keg = {};
+keg.id = v4()
 
 function NewKegForm(props){
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.brand.value);
-    console.log(event.target.price.value);
-    console.log(event.target.alcoholContent.value);
-    console.log(event.target.pintsRemaining.value);
+    props.onNewKegCreation({
+      name: event.target.name.value, 
+      brand: event.target.brand.value, 
+      price: event.target.price.value, 
+      alcoholContent: event.target.alcoholContent.value, 
+      pintsRemaining: event.target.pintsRemaining.value, 
+      id: v4()
+    });
   }
   return (
     <React.Fragment>
@@ -49,5 +53,9 @@ function NewKegForm(props){
     </React.Fragment>
   );
 }
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
 
 export default NewKegForm;
