@@ -8,6 +8,7 @@ function KegDetail(props){
   const kegDetailStyle = {
     color: "white"
   }
+  
 
   let pintsRemaining = keg.pintsRemaining;
   if (parseInt(pintsRemaining) >10){

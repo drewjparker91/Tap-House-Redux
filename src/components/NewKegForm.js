@@ -36,33 +36,3 @@ NewKegForm.propTypes = {
 };
 
 export default NewKegForm;
-
-
-{/* <form onSubmit={handleNewKegFormSubmission}>
-        <input
-        type="text"
-        name="name"
-        placeholder="Enter Name of Beer"
-        />
-        <input
-        type="text"
-        name="brand"
-        placeholder="Enter Brand of Beer"
-        />
-        <input
-        type="text"
-        name="price"
-        placeholder="Enter Price of Beer"
-        />
-        <input
-        type="text"
-        name="alcoholContent"
-        placeholder="Enter Alcohol Content of Beer"
-        />
-        <input
-        type="text"
-        name="pintsRemaining"
-        placeholder="Enter Number of Pints In Keg"
-        />
-        <Button variant="success" type="submit">Add This Keg</Button>
-      </form> */}
