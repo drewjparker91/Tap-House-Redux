@@ -1,30 +1,47 @@
-# Getting Started with Create React App
+<h1 align="center"><strong>The Holy Spirits</strong></h1>
+<h4 align="center"><em>React app that allows user to create, read, update, and delete kegs.</em></h4>
+
+##### __Created:__ 11/20/2020
+##### By _**Drew Parker**_  
+
+## Description
+
+This react app is built based on the following diagram. Users are able to add new keg records and details which are displayed in a list. List items can be selected which display the keg details where they can be deleted, updated, viewed. Kegs can also be "refilled" and pints can be "sold".
+
+![picture](public/KegPlan.jpg)
+
+## Setup/Installation Requirements
+
+1. Clone this repository onto your computer:
+    "git clone https://github.com/drewjparker91/The-Holy-Spirits-Tap-House"
+2. Navigate into the "top-room-friday-project" directory in Visual Studio Code or preferred text editor:
+3. Open the project by typing "code ." while in the previous directory in your terminal.
+4. Open your computer's terminal and navigate to the directory bearing the name of the program and containing the top level subdirectories and files.
+5. Type "npm install" in your console to install necessary dependencies and allow use of the following scripts.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -45,26 +62,24 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Known Bugs
+* No Known bugs at this time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Support and contact details
 
-### Analyzing the Bundle Size
+* Email: drewjparker91@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Visual Studio Code
+* HTML
+* CSS
+* Bootstrap
+* React
 
-### Advanced Configuration
+### License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Copyright (c) 2020 **_Drew Parker_**
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This software is licensed under the MIT license.
