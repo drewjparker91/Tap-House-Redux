@@ -16,7 +16,26 @@ export const deleteKeg = id => ({
   id
 });
 
-export const toggleForm = () => ({
+export const toggleForm = ({
   type: 'TOGGLE_FORM'
 });
+
+export const hideEditForm = ({
+  type: 'HIDE_EDIT_FORM'
+});
+
+export const showEditForm = ({
+  type: 'SHOW_EDIT_FORM'
+});
+
+export const noKeg = ({
+  type: 'NO_KEG'
+});
+
+export const selectedKeg = keg => ({
+  type: 'SELECTED_KEG',
+  selectedKeg: keg
+});
+
+
 

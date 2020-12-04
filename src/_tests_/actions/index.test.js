@@ -9,7 +9,7 @@ describe('tap room actions', () => {
   });
 
   it('toggleForm should create TOGGLE_FORM action', () => {
-    expect(actions.toggleForm()).toEqual({
+    expect(actions.toggleForm).toEqual({
       type: 'TOGGLE_FORM'
     })
   })
@@ -25,4 +25,10 @@ describe('tap room actions', () => {
        id: 1
     });
   });
+
+  // it('hideEditForm should create HIDE_EDIT_FORM action', () => {
+  //   expect(actions.hideEditForm()).toEqual({
+  //     type: 'HIDE_EDIT_FORM'
+  //   });
+  // });
 });
