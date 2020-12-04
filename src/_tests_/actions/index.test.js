@@ -13,4 +13,16 @@ describe('tap room actions', () => {
       type: 'TOGGLE_FORM'
     })
   })
+
+  it('addKeg should create ADD_KEG action', () => {
+    expect(actions.addKeg({name: 'Corona', brand: 'The Corona Co.', price: '3.99', alcoholContent: "5", pintsRemaining: "124", id: 1})).toEqual({
+      type: 'ADD_KEG',
+      name: 'Corona',
+      brand: 'The Corona Co.',
+      price: '3.99',
+      alcoholContent: "5",
+      pintsRemaining: "124",
+       id: 1
+    });
+  });
 });
