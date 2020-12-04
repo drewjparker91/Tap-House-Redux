@@ -9,15 +9,15 @@ import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      // formVisibleOnPage: false,
-      // masterKegList: [],
-      // selectedKeg: null,
-      // editing: false
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     formVisibleOnPage: false,
+  //     masterKegList: [],
+  //     selectedKeg: null,
+  //     editing: false
+  //   };
+  // }
 
   handleClick = () => {
     const { dispatch } = this.props
