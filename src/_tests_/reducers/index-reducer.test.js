@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
+import selectedKegReducer from '../../reducers/selected-keg-reducer';
 
 let store = createStore(rootReducer);
 
@@ -22,7 +23,7 @@ describe("rootReducer", () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
 
-  test('Check that ADD_TICKET action works for kegListReducer and root reducer', () => {
+  test('Check that ADD_KEG action works for kegListReducer and root reducer', () => {
     const action = {
       type: 'ADD_KEG',
       name: 'Corona',
@@ -42,6 +43,14 @@ describe("rootReducer", () => {
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
+  test('Check that SELECTED_KEG action works for both selectedKegReducer and rootReducer', () => {
+    const action = {
+      type: 'SELECTED_KEG'
+    }
+    store.dispatch(action);
+    expect(store.getState().selectedKeg).toEqual(selectedKegReducer(undefined, action));
   });
 
 });
