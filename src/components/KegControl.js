@@ -156,12 +156,14 @@ class KegControl extends React.Component {
   // }
 
   handleBuyAPint = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
-    this.setState({
-      masterKegList: editedMasterKegList,
-  });
+    kegToEdit.pintsRemaining-=1;
+    this.setState({});
+    // const editedMasterKegList = this.state.masterKegList
+    //   .filter(keg => keg.id !== this.state.selectedKeg.id)
+    //   .concat(kegToEdit);
+    // this.setState({
+    //   masterKegList: editedMasterKegList,
+    // });
   }
 
   render(){

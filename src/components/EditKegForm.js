@@ -24,7 +24,7 @@ function EditKegForm(props) {
       brand={keg.brand}
       price={keg.price}
       alcoholContent={keg.alcoholContent}
-      pintsRemaining={keg.pintsRemaining}
+      // pintsRemaining={keg.pintsRemaining}
       buttonText = "Save Updates" 
       />
     </React.Fragment>
@@ -32,6 +32,7 @@ function EditKegForm(props) {
 }
 
 EditKegForm.propTypes = {
+  keg: PropTypes.object,
   onEditKeg: PropTypes.func
 }
 
