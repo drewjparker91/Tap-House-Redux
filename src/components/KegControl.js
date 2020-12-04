@@ -14,20 +14,28 @@ class KegControl extends React.Component {
     this.state = {
       // formVisibleOnPage: false,
       // masterKegList: [],
-      selectedKeg: null,
-      editing: false
+      // selectedKeg: null,
+      // editing: false
     };
   }
 
   handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
+    const { dispatch } = this.props
+    if (this.props.selectedKeg != null) {
+      const action = {
+        type: 'NO_KEG'
+      }
+      dispatch(action);
+      const action2 = {
+        type: 'HIDE_EDIT_FORM'
+      }
+      dispatch(action2)
+      // this.setState({
         // formVisibleOnPage: false,
-        selectedKeg: null,
-        editing: false
-      });
+        // selectedKeg: null,
+        // editing: false
+      // });
     } else {
-      const { dispatch } = this.props;
       const action = {
         type: 'TOGGLE_FORM'
       }
@@ -66,10 +74,16 @@ class KegControl extends React.Component {
   }
 
   handleChangingSelectedKeg = (id) => {
+    const { dispatch } = this.props;
     const selectedKeg = this.props.masterKegList[id];
-    this.setState({
+    const action = {
+      type: 'SELECTED_KEG',
       selectedKeg: selectedKeg
-    });
+    }
+    dispatch(action);
+    // this.setState({
+    //   selectedKeg: selectedKeg
+    // });
   }
 
   handleDeletingKeg = (id) => {
@@ -79,9 +93,13 @@ class KegControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({
-      selectedKeg: null
-    });
+    const action2 = {
+      type: 'NO_KEG'
+    }
+    dispatch(action2)
+    // this.setState({
+    //   selectedKeg: null
+    // });
   }
   //   const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
   //   this.setState ({
@@ -91,9 +109,14 @@ class KegControl extends React.Component {
   // }
 
   handleEditClick = () => {
-    this.setState({
-      editing: true
-    });
+    const { dispatch } = this.props;
+    const action = {
+      type: 'SHOW_EDIT_FORM'
+    }
+    dispatch(action);
+    // this.setState({
+    //   editing: true
+    // });
   }
 
   handleEditingKegInList = (kegToEdit) => {
@@ -109,10 +132,18 @@ class KegControl extends React.Component {
       pintsRemaining: pintsRemaining
     }
     dispatch(action);
-    this.setState({
-      editing: false,
-      selectedKeg: null
-    });
+    const action2 = {
+      type: 'NO_KEG'
+    }
+    dispatch(action2);
+    const action3 = {
+      type: 'HIDE_EDIT_FORM'
+    }
+    dispatch(action3)
+    // this.setState({
+    //   editing: false,
+    //   selectedKeg: null
+    // });
   }
   //   const editedMasterKegList = this.state.masterKegList
   //     .filter(keg => keg.id !== this.state.selectedKeg.id)
@@ -137,18 +168,17 @@ class KegControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-
-    if (this.state.editing) {
+    if (this.props.editing) {
       currentlyVisibleState = 
       <EditKegForm 
-      keg = {this.state.selectedKeg}
+      keg = {this.props.selectedKeg}
       onEditKeg = {this.handleEditingKegInList} 
       />
       buttonText = "Return To Keg List"
-    } else if (this.state.selectedKeg != null) {
+    } else if (this.props.selectedKeg != null) {
       currentlyVisibleState = 
       <KegDetail 
-      keg = {this.state.selectedKeg} 
+      keg = {this.props.selectedKeg} 
       onClickingDelete = {this.handleDeletingKeg}
       onClickingEdit = {this.handleEditClick} 
       onClickingBuyAPint = {this.handleBuyAPint}
@@ -179,13 +209,17 @@ class KegControl extends React.Component {
 
 KegControl.propTypes = {
   masterKegList: PropTypes.object,
-  formVisibleOnPage: PropTypes.bool
+  formVisibleOnPage: PropTypes.bool,
+  selectedKeg: PropTypes.object,
+  editing: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
-    formVisibleOnPage: state.formVisibleOnPage
+    formVisibleOnPage: state.formVisibleOnPage,
+    selectedKeg: state.selectedKeg,
+    editing: state.editing
   }
 }
 
