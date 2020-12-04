@@ -25,7 +25,7 @@ function KegList(props){
       </div>
       <hr/>
       <Row>
-        {props.kegList.map((keg) =>
+        {Object.values(props.kegList).map((keg) =>
           <Col xs={4}>
             <div className="card" style={listCardStyle}>
               <div className="container">
@@ -49,7 +49,7 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   onKegSelection: PropTypes.func
 }
 export default KegList;
