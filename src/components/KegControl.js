@@ -167,7 +167,7 @@ class KegControl extends React.Component {
   }
 
   handleRefillKeg = (kegToEdit) => {
-    kegToEdit.pintsRemaing=124;
+    kegToEdit.pintsRemaining = 124;
     this.setState({});
   }
 

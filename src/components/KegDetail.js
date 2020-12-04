@@ -10,14 +10,14 @@ function KegDetail(props){
   }
   
 
-  // let pintsRemaining = keg.pintsRemaining;
-  // if (parseInt(pintsRemaining) >10){
-  //   pintsRemaining = pintsRemaining
-  // } else if (parseInt(pintsRemaining) > 0){
-  //   pintsRemaining = (pintsRemaining + "... Keg is almost tapped!")
-  // } else {
-  //   pintsRemaining = pintsRemaining + "... Keg is Tapped Out";
-  // }
+  let pintsRemaining = keg.pintsRemaining;
+  if (parseInt(pintsRemaining) >10){
+    pintsRemaining = pintsRemaining
+  } else if (parseInt(pintsRemaining) > 0){
+    pintsRemaining = (pintsRemaining + "... Keg is almost tapped!")
+  } else {
+    pintsRemaining = "Keg is Tapped Out";
+  }
   
   
 
@@ -42,7 +42,7 @@ function KegDetail(props){
         <h5>Crafted By: {keg.brand}</h5>
         <h5>Price: ${keg.price}</h5>
         <h5>Alcohol By Volume: {keg.alcoholContent}%</h5>
-        <h5>Pints Remaining: {keg.pintsRemaining}</h5>
+        <h5>Pints Remaining: {pintsRemaining}</h5>
         <Button variant="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
         <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Keg</Button>
         {/* <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>
