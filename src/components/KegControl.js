@@ -166,6 +166,11 @@ class KegControl extends React.Component {
     // });
   }
 
+  handleRefillKeg = (kegToEdit) => {
+    kegToEdit.pintsRemaing=124;
+    this.setState({});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -184,6 +189,7 @@ class KegControl extends React.Component {
       onClickingDelete = {this.handleDeletingKeg}
       onClickingEdit = {this.handleEditClick} 
       onClickingBuyAPint = {this.handleBuyAPint}
+      onClickingRefillKeg = {this.handleRefillKeg}
       />
       buttonText = "Back To Keg List"
     } else if (this.props.formVisibleOnPage) {

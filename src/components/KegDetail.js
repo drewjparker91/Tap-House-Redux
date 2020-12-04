@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Button from "react-bootstrap/button"
 
 function KegDetail(props){
-  const { keg, onClickingDelete, onClickingBuyAPint } = props;
+  const { keg, onClickingDelete, onClickingBuyAPint, onClickingRefillKeg } = props;
 
   const kegDetailStyle = {
     color: "white"
@@ -48,6 +48,7 @@ function KegDetail(props){
         {/* <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>
         <Button variant="info" onClick={() =>handleBuyAPint(keg, false, (124 - keg.pintsRemaining))}>Refill Keg</Button> */}
         <Button variant="primary" onClick={() => onClickingBuyAPint(keg)}>Buy A Pint!</Button>
+        <Button variant="info" onClick={() => onClickingRefillKeg(keg)}>Refill Keg</Button>
         <hr/>
       </div>
     </React.Fragment>
@@ -58,7 +59,8 @@ KegDetail.propTypes = {
   keg: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
-  onClickingBuyAPint: PropTypes.func
+  onClickingBuyAPint: PropTypes.func,
+  onClickingRefillKeg: PropTypes.func
 }
 
 export default KegDetail;
