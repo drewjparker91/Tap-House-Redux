@@ -2,6 +2,21 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe('kegListReducer', () => {
 
+  const currentState = {
+    1: {name: 'Corona',
+    brand: 'Corona Co',
+    price: '5.99',
+    alcoholContent: '5.0',
+    pintsRemaining: '18',
+    id: 1},
+    2: {name: 'Coors',
+    brand: 'Anheuser-Busch',
+    price: '3.99',
+    alcoholContent: '5.0',
+    pintsRemaining: '20',
+    id: 2}
+  }
+
   let action;
   const kegData ={
     name: 'Corona',
@@ -38,5 +53,20 @@ describe('kegListReducer', () => {
         id: id
       }
     })
+  });
+
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: 'DELETE_KEG',
+      id: 1
+    };
+    expect(kegListReducer(currentState, action)).toEqual({
+      2: {name: 'Coors',
+      brand: 'Anheuser-Busch',
+      price: '3.99',
+      alcoholContent: '5.0',
+      pintsRemaining: '20',
+      id: 2} 
+    });
   });
 });
