@@ -10,16 +10,6 @@ import * as a from './../actions';
 
 class KegControl extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     formVisibleOnPage: false,
-  //     masterKegList: [],
-  //     selectedKeg: null,
-  //     editing: false
-  //   };
-  // }
-
   handleClick = () => {
     const { dispatch } = this.props
     if (this.props.selectedKeg != null) {
@@ -40,24 +30,6 @@ class KegControl extends React.Component {
     const action2 = a.toggleForm;
     dispatch(action2);
   }
-  // handleAddingNewKegToList = (newKeg) => {
-  //   const { dispatch } = this.props;
-  //   const { id, name, brand, price, alcoholContent, pintsRemaining } = newKeg;
-  //   const action = {
-  //     type: 'ADD_KEG',
-  //     id: id,
-  //     name: name, 
-  //     brand: brand,
-  //     price: price,
-  //     alcoholContent: alcoholContent,
-  //     pintsRemaining: pintsRemaining
-  //   }
-  //   dispatch(action);
-  //   const action2 = {
-  //     type: 'TOGGLE_FORM'
-  //   }
-  //   dispatch(action2);
-  // }
 
   handleChangingSelectedKeg = (id) => {
     const { dispatch } = this.props;
@@ -78,9 +50,6 @@ class KegControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.showEditForm;
     dispatch(action);
-    // this.setState({
-    //   editing: true
-    // });
   }
 
   handleEditingKegInList = (kegToEdit) => {
@@ -96,12 +65,6 @@ class KegControl extends React.Component {
   handleBuyAPint = (kegToEdit) => {
     kegToEdit.pintsRemaining-=1;
     this.setState({});
-    // const editedMasterKegList = this.state.masterKegList
-    //   .filter(keg => keg.id !== this.state.selectedKeg.id)
-    //   .concat(kegToEdit);
-    // this.setState({
-    //   masterKegList: editedMasterKegList,
-    // });
   }
 
   handleRefillKeg = (kegToEdit) => {

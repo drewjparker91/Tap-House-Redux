@@ -26,9 +26,28 @@ describe('tap room actions', () => {
     });
   });
 
-  // it('hideEditForm should create HIDE_EDIT_FORM action', () => {
-  //   expect(actions.hideEditForm()).toEqual({
-  //     type: 'HIDE_EDIT_FORM'
-  //   });
-  // });
+  it('hideEditForm should create HIDE_EDIT_FORM action', () => {
+    expect(actions.hideEditForm).toEqual({
+      type: 'HIDE_EDIT_FORM'
+    })
+  });
+
+  it('showEditForm should create SHOW_EDIT_FORM action', () => {
+    expect(actions.showEditForm).toEqual({
+      type: 'SHOW_EDIT_FORM'
+    })
+  });
+
+  it('noKeg should create NO_KEG action', () => {
+    expect(actions.noKeg).toEqual({
+      type: 'NO_KEG'
+    })
+  });
+
+  it('selectedKeg should create SELECTED_KEG action', () => {
+    expect(actions.selectedKeg(1)).toEqual({
+      type: 'SELECTED_KEG',
+      selectedKeg: 1
+    });
+  });
 });
