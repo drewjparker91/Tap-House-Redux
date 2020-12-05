@@ -1,4 +1,5 @@
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
+import * as a from './../../actions/ActionTypes';
 
 describe("selectedKegReducer", () => {
 
@@ -18,7 +19,7 @@ describe("selectedKegReducer", () => {
 
   test('Should toggle to selected keg', () => {
     action = {
-      type: 'SELECTED_KEG',
+      type: a.SELECTED_KEG,
       selectedKeg: selectedKeg
     };
     expect(selectedKegReducer(selectedKeg, action)).toEqual({

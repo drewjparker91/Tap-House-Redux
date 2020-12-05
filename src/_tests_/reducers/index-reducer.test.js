@@ -3,6 +3,8 @@ import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
+import * as a from './../../actions/ActionTypes';
+
 
 let store = createStore(rootReducer);
 
@@ -10,8 +12,10 @@ describe("rootReducer", () => {
 
   test('should return default state if no action type is recognized', () => {
     expect(rootReducer({}, {type: null })).toEqual({
+      editing: false,
       masterKegList: {},
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      selectedKeg:null
     });
   });
 
@@ -25,7 +29,7 @@ describe("rootReducer", () => {
 
   test('Check that ADD_KEG action works for kegListReducer and root reducer', () => {
     const action = {
-      type: 'ADD_KEG',
+      type: a.ADD_KEG,
       name: 'Corona',
       brand: 'The Corona Co.',
       price: '5.99',
@@ -39,18 +43,9 @@ describe("rootReducer", () => {
 
   test('Check that TOGGLE_FORM action works for formVisibleReducer and rootReducer', () => {
     const action = {
-      type: 'TOGGLE_FORM'
+      type: a.TOGGLE_FORM
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
   });
-
-  test('Check that SELECTED_KEG action works for both selectedKegReducer and rootReducer', () => {
-    const action = {
-      type: 'SELECTED_KEG'
-    }
-    store.dispatch(action);
-    expect(store.getState().selectedKeg).toEqual(selectedKegReducer(undefined, action));
-  });
-
 });
