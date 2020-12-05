@@ -12,7 +12,8 @@ function ReusableForm(props){
     bottom: 0,
     left: 0,
     right: 0,
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Kalam' 
   }
   return (
     <React.Fragment>
@@ -50,14 +51,6 @@ function ReusableForm(props){
             defaultValue = {props.alcoholContent ? props.alcoholContent : ''}
             placeholder="Enter Alcohol Content of Beer"
             />
-            <hr/>
-            {/* <h5> Pints Remaining In Keg</h5>
-            <input
-            type="text"
-            name="pintsRemaining"
-            defaultValue = {props.pintsRemaining ? props.pintsRemaining : ''}
-            placeholder="Enter Number of Pints In Keg"
-            /> */}
             <hr/>
             <Button variant="success" type="submit">{props.buttonText}</Button>
             <hr/>

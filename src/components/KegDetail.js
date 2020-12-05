@@ -18,21 +18,6 @@ function KegDetail(props){
   } else {
     pintsRemaining = "Keg is Tapped Out";
   }
-  
-  
-
-  // function handleBuyAPint(keg, isSub, dif) {
-  //   dif = parseInt(dif);
-  //   props.onClickingBuyAPint({
-  //     name: keg.name,
-  //     brand: keg.brand,
-  //     price: keg.price,
-  //     alcoholContent: keg.alcoholContent,
-  //     pintsRemaining: keg.pintsRemaining,
-  //     // pintsRemaining: isSub ? (keg.pintsRemaining === 0 ? 0 : keg.pintsRemaining = keg.pintsRemaining - dif) : keg.pintsRemaining = keg.pintsRemaining + dif,
-  //     id: keg.id
-  //   });
-  // }
 
   return (
     <React.Fragment>
@@ -45,8 +30,6 @@ function KegDetail(props){
         <h5>Pints Remaining: {pintsRemaining}</h5>
         <Button variant="warning" onClick={props.onClickingEdit}>Edit Keg</Button>
         <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Keg</Button>
-        {/* <Button variant="primary" onClick={() => handleBuyAPint(keg, true, 1)}>Buy a Pint</Button>
-        <Button variant="info" onClick={() =>handleBuyAPint(keg, false, (124 - keg.pintsRemaining))}>Refill Keg</Button> */}
         <Button variant="primary" onClick={() => onClickingBuyAPint(keg)}>Buy A Pint!</Button>
         <Button variant="info" onClick={() => onClickingRefillKeg(keg)}>Refill Keg</Button>
         <hr/>

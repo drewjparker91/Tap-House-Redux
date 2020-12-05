@@ -8,6 +8,10 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
 
+const buttonStyle = {
+  fontFamily: 'Kalam'
+}
+
 class KegControl extends React.Component {
 
   handleClick = () => {
@@ -75,14 +79,13 @@ class KegControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-
     if (this.props.editing) {
       currentlyVisibleState = 
       <EditKegForm 
       keg = {this.props.selectedKeg}
       onEditKeg = {this.handleEditingKegInList} 
       />
-      buttonText = "Return To Keg List"
+      buttonText = "Return To Keg List" 
     } else if (this.props.selectedKeg != null) {
       currentlyVisibleState = 
       <KegDetail 

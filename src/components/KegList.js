@@ -13,9 +13,11 @@ function KegList(props){
     marginRight: "15px",
     backgroundColor: 'rgba(52, 52, 52, .3)',
     color: "white",
-  }
+    fontFamily: 'Kalam'
+  } 
   const topListStyle = {
-    color: "white"
+    color: "white",
+    fontFamily: 'Kalam'
   }
 
   return (
